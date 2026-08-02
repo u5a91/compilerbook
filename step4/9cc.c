@@ -127,16 +127,16 @@ int main(int argc, char **argv) {   // 整数, 文字列配列
     printf("main:\n");
 
     // 式の最初が整数かどうか
-    printf("    mov rax, %ld\n", expect_number());
+    printf("    mov rax, %d\n", expect_number());
 
     while(!at_eof()) {
         if (consume('+')) {
-            printf("    add rax, %ld\n", expect_number());
+            printf("    add rax, %d\n", expect_number());
             continue;
         }
 
         expect('-');
-        printf("    sub rax, %ld\n", expect_number());
+        printf("    sub rax, %d\n", expect_number());
     }
 
     printf("    ret\n");
